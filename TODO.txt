@@ -1,0 +1,4 @@
+--- write functional tests
+--- clean up 
+--- environment integration (so URLs for production and test is automatically switched?)
+

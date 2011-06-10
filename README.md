@@ -24,13 +24,13 @@ Install
 
 Setup
 --
-  You need to pass your api key and secret to the Kontagent::Tracking.configure: 
+  You need to pass your api key to the Kontagent.configuration: 
    <pre>
-<code>Kontagent::Tracking.configure[:api_key] = "..."
-Kontagent::Tracking.configure[:secret] = "..."</code></pre>
+<code>Kontagent.configuration.api_key. = "..."
+Kontagent.configuration.api_secret = "..."</code></pre>
 
 By default Library sends all the notifications to the Kontagent's test server (test-server.kontagent.com) you have to configure it otherwise if you wish to hit your production setup
-   <pre><code>Kontagent::Tracking.configure[:base_url] = "..."</code></pre>
+   <pre><code>Kontagent.configuration.base_url = "..."</code></pre>
 Usage
 --
 
