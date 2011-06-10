@@ -3,16 +3,24 @@ Library for Kontagent REST API
 
 About
 --
-This is a library for kontagent ([http://kontagent.com](http://kontagent.com)) analytics package.
-It is implemented as a standalone library without any dependencies.
+This is a library for kontagent ([http://kontagent.com](http://kontagent.com)) analytics package for Facebook.
+It is implemented as a standalone library without any dependencies. 
+There is no need to have it on top of Facebooker plugin - works great with Sinatra, Padrino and Rails apps. 
+
+It can:
+
+* Register new installs/uninstalls 
+* Register any custom event as described in documentation from Kontagent.
+* Supports custom subsets (up to three) and all the values from standard REST API by Kontagent 
+
+Please check the 'Usage' section to see all the possible codes. 
  
 Install
 -- 
   Clone this repository 
  <pre><code>$ git clone http://github.com/luki3k5/kontagent</code></pre>
-  or install through the gem
+  or install with the gem
  <pre><code>$ gem install kontagent</code></pre>
-
 
 Setup
 --
@@ -53,3 +61,12 @@ and are corresponding to the  [kontagent REST API documentation](http://develope
 :revenue_tracking               => "mtu",
 :unique_tracking_tags           => "" }
 </pre>
+
+
+License
+-- 
+
+Credits
+--
+
+
