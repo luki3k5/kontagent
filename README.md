@@ -24,17 +24,45 @@ Install
 
 Setup
 --
-  You need to pass your api key to the Kontagent.configuration: 
+  You need to pass your api key and secret to the Kontagent::Tracking.configure: 
    <pre>
-<code>Kontagent.configuration.api_key. = "..."
-Kontagent.configuration.api_secret = "..."</code></pre>
+<code>Kontagent::Tracking.configure[:api_key] = "..."
+Kontagent::Tracking.configure[:secret] = "..."</code></pre>
 
 By default Library sends all the notifications to the Kontagent's test server (test-server.kontagent.com) you have to configure it otherwise if you wish to hit your production setup
-   <pre><code>Kontagent.configuration.base_url = "..."</code></pre>
+   <pre><code>Kontagent::Tracking.configure[:base_url] = "..."</code></pre>
 Usage
 --
 
-Here is the list of possible messages types the mappings are available in <pre>./lib/kontagent/messages.rb</pre> file
+If we want to notify API about new installation:
+<pre>
+<code>Kontagent::Tracking.notify_new_install(facebook_id)</code>
+</pre>
+
+in the same manner we can quickly notify application removal
+<pre>
+<code>Kontagent::Tracking.notify_uninstall(facebook_id)</code>
+</pre>
+
+On top of these two predefined events we can a call custom one:
+<pre>
+<code>Kontagent::Tracking.notify_custom_event(facebook_user_id, event_name, value, level_id, st1=nil, st2=nil, st3=nil)</code>
+</pre> 
+
+	
+Notice how it takes different arguments, their meanings are:
+
+* facebook_user_id     - id of the facebook_user
+* event_name           - name of the event
+* value                - value of the event
+* level_id             - if of level (ie. for a game)
+* st1                  - subtype 1 
+* st2                  - subtype 2 
+* st3                  - subtype 3
+	
+
+
+Here is the list of possible messages types for custom event_names the mappings are available in <pre>./lib/kontagent/messages.rb</pre> file
 and are corresponding to the  [kontagent REST API documentation](http://developers.kontagent.com/getting-started/instrumenting-your-application/kontagent-rest-api)
 
 <pre>
@@ -63,10 +91,8 @@ and are corresponding to the  [kontagent REST API documentation](http://develope
 </pre>
 
 
-License
--- 
-
 Credits
 --
 
+Initially luki3k5 (Lukasz Lazewski) started this as an answer to lack of proper standalone Kontagent library in ruby.  
 
