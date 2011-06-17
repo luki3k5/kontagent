@@ -19,8 +19,6 @@ Install
 -- 
   Clone this repository 
  <pre><code>$ git clone http://github.com/luki3k5/kontagent</code></pre>
-  or install with the gem
- <pre><code>$ gem install kontagent</code></pre>
 
 Setup
 --
